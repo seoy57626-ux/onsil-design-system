@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>온실 (溫室)</title>
+    <meta name="description" content="공간의 온도에 따라 화면 속 식물이 자라는 조명" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600&family=Michroma&family=Silkscreen&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css?v=onsil3" />
+  </head>
+  <body>
+    <svg class="sr-only" aria-hidden="true">
+      <symbol id="icon-arrow" viewBox="0 0 16 16">
+        <path d="M4.5 11.5l7-7M5.5 4.5h6v6" fill="none" stroke="currentColor" stroke-width="1.5" />
+      </symbol>
+    </svg>
+
+    <!-- Nav · L4 -->
+    <header class="nav">
+      <div class="container nav__inner">
+        <a class="nav__logo t-tech-label" href="#top">Onsil™</a>
+        <nav class="nav__links" aria-label="섹션">
+          <a class="btn btn--utility btn--s" href="#concept">[ 컨셉 ]</a>
+          <a class="btn btn--utility btn--s" href="#shelf">[ 데모 ]</a>
+          <a class="btn btn--utility btn--s" href="#how">[ 작동 방식 ]</a>
+          <a class="btn btn--utility btn--s" href="#contact">[ 연락 ]</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- A · Hero -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="container hero__stack">
+          <p class="hero__label t-mono-m">[ 01 · Lamp / DHT22 ]</p>
+
+          <figure class="hero__photo" aria-label="램프 사진 자리">
+            <span class="t-mono-s">[ 램프 사진 자리 · 16:9 ]</span>
+          </figure>
+
+          <p class="hero__word t-display-xxl" aria-hidden="true">onsil</p>
+
+          <div class="hero__text">
+            <h1 id="hero-title" class="t-heading-kr">온실 (溫室)</h1>
+            <p class="hero__intro t-body-kr">공간의 온도에 따라 화면 속 식물이 자라는 조명</p>
+            <div class="hero__actions">
+              <a class="btn btn--secondary" href="#shelf">
+                데모 보기
+                <svg class="btn__icon" aria-hidden="true"><use href="#icon-arrow" /></svg>
+              </a>
+              <a class="btn btn--utility" href="#how">[ 작동 방식 ]</a>
+            </div>
+          </div>
+
+          <div class="hero__card card-inverse">
+            <span class="card-inverse__tag t-mono-s">현재 온도</span>
+            <p class="card-inverse__metric t-tech-display" ><span data-temp-num>27.0</span><span class="unit">°C</span></p>
+            <p class="t-body-s"><span data-stage-name-out>잎</span> 단계입니다. 아래 데모에서 온도를 바꿔 보세요.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- B · Concept -->
+      <section class="section" id="concept" aria-labelledby="concept-title">
+        <div class="container">
+          <div class="grid section__head">
+            <p class="section__label t-mono-m">[ 02 · Concept ]</p>
+            <div class="section__titles">
+              <h2 id="concept-title" class="t-h1">Concept</h2>
+              <p class="t-heading-kr">온실을 닮은 램프</p>
+            </div>
+          </div>
+
+          <div class="grid concept__body">
+            <div class="concept__text">
+              <p class="t-body-kr">
+                온실은 금속 골조에 유리를 끼워 만든 집입니다. 이 램프도 같은 방식으로 만들었습니다. 알루미늄
+                프레임에 반투명 광확산 패널을 끼웠습니다.
+              </p>
+              <p class="t-body-kr muted">
+                안에서 빛이 퍼지고, 센서가 주변 온도를 읽습니다. 온도가 오르면 화면 속 화분이 자랍니다.
+              </p>
+            </div>
+
+            <table class="table concept__table">
+              <caption class="sr-only">온실과 램프의 대응 관계</caption>
+              <thead>
+                <tr>
+                  <th class="t-mono-s" scope="col">온실</th>
+                  <th class="t-mono-s" scope="col">램프</th>
+                  <th class="t-mono-s" scope="col">역할</th>
+                </tr>
+              </thead>
+              <tbody class="t-body-kr">
+                <tr>
+                  <td>금속 골조</td>
+                  <td>알루미늄 프레임</td>
+                  <td>2020 프로파일로 틀을 잡습니다.</td>
+                </tr>
+                <tr>
+                  <td>유리</td>
+                  <td>광확산 패널</td>
+                  <td>빛을 고르게 퍼뜨립니다.</td>
+                </tr>
+                <tr>
+                  <td>온기</td>
+                  <td>센서가 읽는 온도</td>
+                  <td>DHT22가 2초마다 잽니다.</td>
+                </tr>
+                <tr>
+                  <td>식물</td>
+                  <td>화면 속 화분</td>
+                  <td>온도에 따라 네 단계로 자랍니다.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- C · Demo -->
+      <section class="section" id="demo" aria-labelledby="demo-title">
+        <div class="container">
+          <div class="grid section__head">
+            <p class="section__label t-mono-m">[ 03 · Demo ]</p>
+            <div class="section__titles">
+              <h2 id="demo-title" class="t-h1">Shelf</h2>
+              <p class="t-heading-kr">온실 화면 데모</p>
+              <p class="section__lead t-body-kr">
+                온도를 바꾸면 선반 위 화분이 자라고 화면 색이 바뀝니다. 26, 28, 30°C에서 단계가 넘어갑니다.
+              </p>
+            </div>
+          </div>
+
+          <div class="screen" id="shelf" data-stage="leaf" data-screen>
+            <div class="screen__bar t-mono-s">
+              <span>온실 화면 · 선반 01</span>
+              <span>DHT22 · 데모</span>
+            </div>
+
+            <div class="screen__body">
+              <div class="screen__controls">
+                <div class="card-inverse readout" data-readout>
+                  <span class="card-inverse__tag t-mono-s">현재 온도</span>
+                  <div class="readout__row">
+                    <p class="card-inverse__metric t-tech-display" ><span data-temp-num>27.0</span><span class="unit">°C</span></p>
+                    <p class="readout__stage t-pixel" data-stage-num-out>02</p>
+                  </div>
+                  <p class="t-body-s" aria-live="polite">
+                    <span data-stage-name-out>잎</span> 단계 · <span data-stage-note-out>28°C가 되면 봉오리가 생깁니다.</span>
+                  </p>
+                </div>
+
+                <div class="screen__panel">
+                  <div class="field">
+                    <label class="field__label t-mono-m" for="temp">[ 온도 ]</label>
+                    <div class="field__control">
+                      <input
+                        class="range"
+                        id="temp"
+                        type="range"
+                        min="20"
+                        max="35"
+                        step="0.1"
+                        value="27"
+                        aria-describedby="temp-help"
+                      />
+                      <output class="field__value" for="temp" data-temp-field>27.0°C</output>
+                    </div>
+                    <p class="field__helper t-caption" id="temp-help">20°C부터 35°C까지 움직여 보세요.</p>
+                  </div>
+
+                  <div class="presets" role="group" aria-label="온도 바로 선택">
+                    <button class="btn btn--utility btn--s" type="button" data-preset="23">[ 23°C ]</button>
+                    <button class="btn btn--utility btn--s" type="button" data-preset="27">[ 27°C ]</button>
+                    <button class="btn btn--utility btn--s" type="button" data-preset="29">[ 29°C ]</button>
+                    <button class="btn btn--utility btn--s" type="button" data-preset="32">[ 32°C ]</button>
+                  </div>
+
+                </div>
+
+                <ol class="stage-scale" aria-label="성장 단계">
+                  <li data-stage-step="sprout"><span class="t-mono-s">01 · 26°C 미만</span><span class="t-body-s">새싹</span></li>
+                  <li data-stage-step="leaf"><span class="t-mono-s">02 · 26~28°C</span><span class="t-body-s">잎</span></li>
+                  <li data-stage-step="bud"><span class="t-mono-s">03 · 28~30°C</span><span class="t-body-s">봉오리</span></li>
+                  <li data-stage-step="bloom"><span class="t-mono-s">04 · 30°C 이상</span><span class="t-body-s">꽃</span></li>
+                </ol>
+              </div>
+
+              <ul class="shelf" aria-label="선반 01의 화분">
+                <li class="card-project" data-pot="튤립">
+                  <div class="card-project__media">
+                    <div class="card-project__placeholder" role="img" aria-label="튤립 이미지 자리"></div>
+                    <span class="card-project__index t-mono-s">[ 01 ]</span>
+                  </div>
+                  <div class="card-project__content">
+                    <div class="card-project__meta t-mono-s">
+                      <span>화분 01 · 선반 1층</span>
+                      <svg class="btn__icon" aria-hidden="true"><use href="#icon-arrow" /></svg>
+                    </div>
+                    <h3 class="card-project__title t-h3" data-title>튤립 · 잎 · 27.0°C</h3>
+                    <p class="card-project__desc t-body-s" data-desc>28°C가 되면 봉오리가 생깁니다.</p>
+                    <div class="tags t-mono-s">
+                      <span class="tag" data-tag-stage>잎</span>
+                      <span class="tag" data-tag-temp>28°C</span>
+                    </div>
+                  </div>
+                </li>
+                <li class="card-project" data-pot="제라늄">
+                  <div class="card-project__media">
+                    <div class="card-project__placeholder" role="img" aria-label="제라늄 이미지 자리"></div>
+                    <span class="card-project__index t-mono-s">[ 02 ]</span>
+                  </div>
+                  <div class="card-project__content">
+                    <div class="card-project__meta t-mono-s">
+                      <span>화분 02 · 선반 1층</span>
+                      <svg class="btn__icon" aria-hidden="true"><use href="#icon-arrow" /></svg>
+                    </div>
+                    <h3 class="card-project__title t-h3" data-title>제라늄 · 잎 · 27.0°C</h3>
+                    <p class="card-project__desc t-body-s" data-desc>28°C가 되면 봉오리가 생깁니다.</p>
+                    <div class="tags t-mono-s">
+                      <span class="tag" data-tag-stage>잎</span>
+                      <span class="tag" data-tag-temp>28°C</span>
+                    </div>
+                  </div>
+                </li>
+                <li class="card-project" data-pot="라벤더">
+                  <div class="card-project__media">
+                    <div class="card-project__placeholder" role="img" aria-label="라벤더 이미지 자리"></div>
+                    <span class="card-project__index t-mono-s">[ 03 ]</span>
+                  </div>
+                  <div class="card-project__content">
+                    <div class="card-project__meta t-mono-s">
+                      <span>화분 03 · 선반 2층</span>
+                      <svg class="btn__icon" aria-hidden="true"><use href="#icon-arrow" /></svg>
+                    </div>
+                    <h3 class="card-project__title t-h3" data-title>라벤더 · 잎 · 27.0°C</h3>
+                    <p class="card-project__desc t-body-s" data-desc>28°C가 되면 봉오리가 생깁니다.</p>
+                    <div class="tags t-mono-s">
+                      <span class="tag" data-tag-stage>잎</span>
+                      <span class="tag" data-tag-temp>28°C</span>
+                    </div>
+                  </div>
+                </li>
+                <li class="card-project" data-pot="수국">
+                  <div class="card-project__media">
+                    <div class="card-project__placeholder" role="img" aria-label="수국 이미지 자리"></div>
+                    <span class="card-project__index t-mono-s">[ 04 ]</span>
+                  </div>
+                  <div class="card-project__content">
+                    <div class="card-project__meta t-mono-s">
+                      <span>화분 04 · 선반 2층</span>
+                      <svg class="btn__icon" aria-hidden="true"><use href="#icon-arrow" /></svg>
+                    </div>
+                    <h3 class="card-project__title t-h3" data-title>수국 · 잎 · 27.0°C</h3>
+                    <p class="card-project__desc t-body-s" data-desc>28°C가 되면 봉오리가 생깁니다.</p>
+                    <div class="tags t-mono-s">
+                      <span class="tag" data-tag-stage>잎</span>
+                      <span class="tag" data-tag-temp>28°C</span>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- D · How it works -->
+      <section class="section" id="how" aria-labelledby="how-title">
+        <div class="container">
+          <div class="grid section__head">
+            <p class="section__label t-mono-m">[ 04 · How it works ]</p>
+            <div class="section__titles">
+              <h2 id="how-title" class="t-h1">How it works</h2>
+              <p class="t-heading-kr">작동 방식</p>
+              <p class="section__lead t-body-kr">부품은 네 가지입니다. 센서가 재고, 보드가 읽고, 조명과 화면이 바뀝니다.</p>
+            </div>
+          </div>
+
+          <ul class="parts">
+            <li class="card-hud">
+              <div class="card-hud__header t-mono-s"><span>01 · DHT22</span><span aria-hidden="true">×</span></div>
+              <div class="card-hud__body">
+                <p class="card-hud__text">온도와 습도를 재는 센서입니다. 2초마다 한 번 읽습니다.</p>
+                <p class="card-hud__meta t-mono-s">핀 D2 · 0.1°C 단위</p>
+              </div>
+            </li>
+            <li class="card-hud">
+              <div class="card-hud__header t-mono-s"><span>02 · Arduino Uno</span><span aria-hidden="true">×</span></div>
+              <div class="card-hud__body">
+                <p class="card-hud__text">센서 값을 읽어 단계를 정하고, 조명 밝기를 맞춥니다.</p>
+                <p class="card-hud__meta t-mono-s">USB 시리얼 · 9600bps</p>
+              </div>
+            </li>
+            <li class="card-hud">
+              <div class="card-hud__header t-mono-s"><span>03 · LED strip</span><span aria-hidden="true">×</span></div>
+              <div class="card-hud__body">
+                <p class="card-hud__text">패널 안쪽에 둘렀습니다. 26, 28, 30°C에서 밝기가 한 단계씩 오릅니다.</p>
+                <p class="card-hud__meta t-mono-s">PWM 핀 D6 · 4단계</p>
+              </div>
+            </li>
+            <li class="card-hud">
+              <div class="card-hud__header t-mono-s"><span>04 · Web</span><span aria-hidden="true">×</span></div>
+              <div class="card-hud__body">
+                <p class="card-hud__text">노트북의 로컬 서버가 값을 받아 휴대폰 화면으로 보냅니다. QR로 접속합니다.</p>
+                <p class="card-hud__meta t-mono-s">WebSocket · 2초 갱신</p>
+              </div>
+            </li>
+          </ul>
+
+          <div class="flow-wrap">
+            <table class="table flow">
+              <caption class="sr-only">데이터가 흐르는 순서</caption>
+              <thead>
+                <tr>
+                  <th class="t-mono-s" scope="col">순서</th>
+                  <th class="t-mono-s" scope="col">하는 일</th>
+                  <th class="t-mono-s" scope="col">부품</th>
+                </tr>
+              </thead>
+              <tbody class="t-body-kr">
+                <tr>
+                  <td class="t-mono-m">01</td>
+                  <td>주변 온도를 잽니다.</td>
+                  <td class="muted">DHT22</td>
+                </tr>
+                <tr>
+                  <td class="t-mono-m">02</td>
+                  <td>값을 읽고 단계를 정합니다.</td>
+                  <td class="muted">Arduino Uno</td>
+                </tr>
+                <tr>
+                  <td class="t-mono-m">03</td>
+                  <td>단계에 맞춰 밝기를 바꿉니다.</td>
+                  <td class="muted">LED strip</td>
+                </tr>
+                <tr>
+                  <td class="t-mono-m">04</td>
+                  <td>값을 시리얼로 보내면 화면 속 화분이 자랍니다.</td>
+                  <td class="muted">로컬 서버, 휴대폰</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- E · Contact (Dark) -->
+      <section class="section contact" id="contact" data-theme="dark" aria-labelledby="contact-title">
+        <div class="container">
+          <div class="grid section__head">
+            <p class="section__label t-mono-m">[ 05 · Contact ]</p>
+            <div class="section__titles">
+              <h2 id="contact-title" class="t-h1">Contact</h2>
+              <p class="t-heading-kr">만든 사람</p>
+            </div>
+          </div>
+
+          <div class="grid contact__body">
+            <table class="table contact__list">
+              <caption class="sr-only">연락 정보</caption>
+              <thead>
+                <tr>
+                  <th class="t-mono-s" scope="col">항목</th>
+                  <th class="t-mono-s" scope="col">내용</th>
+                </tr>
+              </thead>
+              <tbody class="t-body-kr">
+                <tr>
+                  <td>이름</td>
+                  <td>[ 이름 ]</td>
+                </tr>
+                <tr>
+                  <td>이메일</td>
+                  <td>[ name@example.com ]</td>
+                </tr>
+                <tr>
+                  <td>인스타그램</td>
+                  <td>[ @account ]</td>
+                </tr>
+                <tr>
+                  <td>소속</td>
+                  <td>[ 학교 · 수업 ]</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="contact__action">
+              <a class="btn btn--primary" href="mailto:name@example.com">
+                메일 보내기
+                <svg class="btn__icon" aria-hidden="true"><use href="#icon-arrow" /></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- F · Footer -->
+    <footer class="footer" data-theme="dark">
+      <div class="container footer__inner">
+        <p class="footer__logo t-tech-label">Onsil™</p>
+        <nav class="footer__links" aria-label="푸터">
+          <a class="btn btn--utility btn--s" href="#top">[ 처음으로 ]</a>
+          <a class="btn btn--utility btn--s" href="#shelf">[ 데모 ]</a>
+        </nav>
+        <p class="t-mono-s">온실 (溫室) · 2026</p>
+      </div>
+    </footer>
+
+    <script src="onsil.js?v=onsil2" defer></script>
+  </body>
+</html>

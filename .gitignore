@@ -1,0 +1,7 @@
+# Publish only the Onsil site files
+/*
+!/index.html
+!/style.css
+!/onsil.js
+!/.nojekyll
+!/.gitignore
