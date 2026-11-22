@@ -11,7 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600&family=Michroma&family=Silkscreen&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css?v=onsil3" />
+    <link rel="stylesheet" href="style.css?v=onsil4" />
   </head>
   <body>
     <svg class="sr-only" aria-hidden="true">
@@ -39,8 +39,9 @@
         <div class="container hero__stack">
           <p class="hero__label t-mono-m">[ 01 · Lamp / DHT22 ]</p>
 
-          <figure class="hero__photo" aria-label="램프 사진 자리">
+          <figure class="hero__photo" id="lamp3d" data-autoplay aria-label="램프가 분해되고 조립되는 3D 장면. 위아래로 끌면 직접 움직입니다.">
             <span class="t-mono-s">[ 램프 사진 자리 · 16:9 ]</span>
+            <canvas class="lamp3d__canvas" aria-hidden="true"></canvas>
           </figure>
 
           <p class="hero__word t-display-xxl" aria-hidden="true">onsil</p>
@@ -414,5 +415,7 @@
     </footer>
 
     <script src="onsil.js?v=onsil2" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.min.js" defer></script>
+    <script src="lamp-scene.js?v=hero1" defer></script>
   </body>
 </html>

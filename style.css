@@ -230,6 +230,18 @@
   --card-gap: var(--space-lg);
   --card-radius: var(--radius-none);
   --card-radius-lg: var(--radius-lg);
+
+  /* 3D lamp scene (lamp-scene.js reads these; semantic aliases only) */
+  --scene-bg: var(--card-media-bg);
+  --scene-grid: var(--scene-bg);
+  --scene-env: var(--color-bg-surface-muted);
+  --scene-softbox: var(--color-bg-surface);
+  --scene-light-key: var(--color-bg-surface);
+  --scene-light-rim: var(--color-bg-canvas);
+  --scene-light-ground: var(--color-text-secondary);
+  --scene-signal: var(--color-bg-accent);
+  --scene-signal-soft: var(--color-bg-accent-soft);
+  --scene-cable: var(--color-text-primary);
 }
 
 /* ---------- Temperature stages ----------
@@ -847,6 +859,17 @@ button {
   place-items: center;
   color: var(--color-text-secondary);
 }
+.hero__photo .lamp3d__canvas {
+  position: absolute;
+  inset: var(--space-0);
+  width: 100%;
+  height: 100%;
+  display: none;
+  cursor: grab;
+}
+.hero__photo.is-3d .lamp3d__canvas { display: block; }
+.hero__photo.is-3d > span { display: none; }
+.hero__photo.is-drag .lamp3d__canvas { cursor: grabbing; }
 .hero__word {
   position: relative;
   z-index: var(--layer-type);
